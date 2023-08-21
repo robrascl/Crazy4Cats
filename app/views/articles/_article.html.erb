@@ -1,0 +1,21 @@
+<div id="<%= dom_id article %>">
+  <p>
+    <strong>Title:</strong>
+    <%= article.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= article.description %>
+  </p>
+
+  <p>
+
+    <% if article.photo.attached?  %>
+        <%=  image_tag article.photo, size: "340x340"  %>
+      <% else %>
+        <%=  image_tag 'no_photography.svg', size: "340x340" %>
+    <% end %>
+  </p>
+
+</div>

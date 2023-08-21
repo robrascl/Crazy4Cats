@@ -1,0 +1,96 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww12600\viewh10200\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \
+The default interactive shell is now zsh.\
+To update your account to use zsh, please run `chsh -s /bin/zsh`.\
+For more details, please visit https://support.apple.com/kb/HT208050.\
+MacBookPro:crazy4cats Robras$ rails g controller Home index\
+      create  app/controllers/home_controller.rb\
+       route  get 'home/index'\
+      invoke  erb\
+      create    app/views/home\
+      create    app/views/home/index.html.erb\
+      invoke  test_unit\
+      create    test/controllers/home_controller_test.rb\
+      invoke  helper\
+      create    app/helpers/home_helper.rb\
+      invoke    test_unit\
+MacBookPro:crazy4cats Robras$ rails g scaffold Articles title description photo\
+[WARNING] The model name 'Articles' was recognized as a plural, using the singular 'Article' instead. Override with --force-plural or setup custom inflection rules for this noun before running the generator.\
+      invoke  active_record\
+      create    db/migrate/20230718195726_create_articles.rb\
+      create    app/models/article.rb\
+      invoke    test_unit\
+      create      test/models/article_test.rb\
+      create      test/fixtures/articles.yml\
+      invoke  resource_route\
+       route    resources :articles\
+      invoke  scaffold_controller\
+      create    app/controllers/articles_controller.rb\
+      invoke    erb\
+      create      app/views/articles\
+      create      app/views/articles/index.html.erb\
+      create      app/views/articles/edit.html.erb\
+      create      app/views/articles/show.html.erb\
+      create      app/views/articles/new.html.erb\
+      create      app/views/articles/_form.html.erb\
+      create      app/views/articles/_article.html.erb\
+      invoke    resource_route\
+      invoke    test_unit\
+      create      test/controllers/articles_controller_test.rb\
+      create      test/system/articles_test.rb\
+      invoke    helper\
+      create      app/helpers/articles_helper.rb\
+      invoke      test_unit\
+      invoke    jbuilder\
+      create      app/views/articles/index.json.jbuilder\
+      create      app/views/articles/show.json.jbuilder\
+      create      app/views/articles/_article.json.jbuilder\
+MacBookPro:crazy4cats Robras$ rails g model comment content article:references user:references\
+      invoke  active_record\
+      create    db/migrate/20230718195813_create_comments.rb\
+      create    app/models/comment.rb\
+      invoke    test_unit\
+      create      test/models/comment_test.rb\
+      create      test/fixtures/comments.yml\
+MacBookPro:crazy4cats Robras$ rails g model reaction kind reaction_type article:references user:references comment:references\
+      invoke  active_record\
+      create    db/migrate/20230718195923_create_reactions.rb\
+      create    app/models/reaction.rb\
+      invoke    test_unit\
+      create      test/models/reaction_test.rb\
+      create      test/fixtures/reactions.yml\
+MacBookPro:crazy4cats Robras$ rails db:migrate\
+== 20230718195726 CreateArticles: migrating ===================================\
+-- create_table(:articles)\
+   -> 0.0374s\
+== 20230718195726 CreateArticles: migrated (0.0376s) ==========================\
+\
+== 20230718195813 CreateComments: migrating ===================================\
+-- create_table(:comments)\
+   -> 0.0419s\
+== 20230718195813 CreateComments: migrated (0.0420s) ==========================\
+\
+== 20230718195923 CreateReactions: migrating ==================================\
+-- create_table(:reactions)\
+   -> 0.0395s\
+== 20230718195923 CreateReactions: migrated (0.0396s) =========================\
+\
+MacBookPro:crazy4cats Robras$ rails db:migrate:status\
+\
+database: crazy4cats_development\
+\
+ Status   Migration ID    Migration Name\
+--------------------------------------------------\
+   up     20230717212632  Devise create users\
+   up     20230717213754  Add details to users\
+   up     20230718195726  Create articles\
+   up     20230718195813  Create comments\
+   up     20230718195923  Create reactions\
+\
+MacBookPro:crazy4cats Robras$ }

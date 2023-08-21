@@ -1,0 +1,51 @@
+<p>Show</p>
+<p style="color: green"><%= notice %></p>
+
+
+<%= render @article %>
+
+<div>
+  <%= render 'reactions/options' %>
+</div>
+
+<div class='card mt-3 mb-3'style="width: 18rem;" >
+  <h5> Comentarios </h5>
+  <% @article.comment.each do |coment|%>
+      <p>
+      <%=  coment.content %>
+      </p>
+  <% end %>
+</div>
+
+
+<div class='mt-5 mb-5'>
+  <div class='card' style="width: 18rem;">
+    <h5>Agregar comentario</h5>
+    <%= form_with(model: [@article, @article.comment.build], local:true ) do |form| %>
+            <p>
+              <%= form.label :content  %>
+              <%= form.text_area :content %>
+            </p>
+            <p>
+              <%= form.submit 'comentar'  %>
+            </p>
+    <% end %>
+  </div>
+</div>
+
+<div class='container mt-1 mb-5'>
+  <div class="row row-cols-auto">
+      <div class="col">
+        <%= link_to image_tag('back.svg'), articles_path, class: "btn btn-light", title: "Back to articles" %>
+      </div>
+
+      <div class="col">
+        <%= link_to image_tag('edit_note'), edit_article_path(@article) , class: 'btn btn-primary', title: "Edit this article" %>
+      </div>
+
+      <div class="col">
+        <%= button_to image_tag('delete.svg'), @article, method: :delete , class: 'btn btn-danger', title: "Destroy this article" %>
+      </div>
+
+  </div>
+</div>

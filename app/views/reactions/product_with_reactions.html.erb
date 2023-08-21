@@ -1,0 +1,12 @@
+<h1> Products </h1>
+
+<ul>
+    <% @article.each do |article| %>
+        <li>
+            <%= article.title %> - 
+            <%= article.find_kind_user_relation(current_user) %>
+            <p>
+                <%= link_to "Show this article", article %>
+        </li>
+    <% end %>
+</ul>
