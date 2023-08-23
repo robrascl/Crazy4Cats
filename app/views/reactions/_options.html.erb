@@ -1,9 +1,16 @@
-<div>
-    <ul>
-        <% Reaction.kinds.each do |kind| %>
-          
-           <%= @article.reactions.where(kind: kind).count  %> <%= button_to image_tag("#{kind}.svg", size: "20x20"), user_reaction_path(article_id: @article.id, kind: kind), title: "#{kind}", method: :post %>
-           
-        <% end %>
-    </ul>
+<div class='container ms-0' id='reaccion'>
+
+          <div class='row card'>
+
+
+                <% Reaction.kinds.each do |kind| %>
+                    <div class='col-12' id='breacccion'>
+                        <%= @article.reactions.where(kind: kind).count  %>
+                        <%= button_to image_tag("#{kind}.svg", size: "20x20"), user_reaction_path(article_id: @article.id, kind: kind), title: "#{kind}", method: :post %>   
+                    </div>
+                <% end %>
+
+                
+            </div> 
+
 </div>

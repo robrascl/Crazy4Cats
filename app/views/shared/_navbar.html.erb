@@ -8,13 +8,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <%= link_to 'aventuras de Gatos', articles_path, class: 'nav-link' %>
+                    <%= link_to 'Aventuras de Gatos', articles_path, class: 'nav-link' %>
                 </li>
-                <% if user_signed_in? %>
-                    <li class="nav-item">
-                        <%= link_to 'Tus reacciones', my_reactions_path, class: 'nav-link' %>
-                    </li>
-                <% end %>
+
 
 
             </ul>
